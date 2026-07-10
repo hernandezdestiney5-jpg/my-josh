@@ -1,0 +1,72 @@
+
+:root{
+  --bg:#0a0a0b;
+  --panel:#151517;
+  --panel-2:#202024;
+  --line:#303036;
+  --text:#f7f7f8;
+  --muted:#aaaab2;
+  --accent:#1fbf84;
+  --accent-2:#0e8f64;
+  --user:#1d6f55;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text)}
+button,textarea,input{font:inherit}
+.app-shell{display:grid;grid-template-columns:310px 1fr;height:100vh;overflow:hidden}
+.sidebar{background:#101012;border-right:1px solid var(--line);padding:22px;display:flex;flex-direction:column;gap:18px}
+.brand-row{display:flex;gap:13px;align-items:center}
+.brand-avatar{width:58px;height:58px;border-radius:18px;object-fit:cover;border:2px solid var(--accent)}
+h1{font-size:23px;margin:0 0 3px}
+.brand-row p{font-size:13px;color:var(--muted);margin:0;line-height:1.35}
+.new-chat{border:0;background:var(--accent);color:#061b14;font-weight:800;border-radius:14px;padding:13px;cursor:pointer}
+.new-chat:hover{background:#28d496}
+.personality-card,.voice-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:15px}
+.personality-card h3{font-size:14px;margin:0 0 10px}
+.chips{display:flex;gap:7px;flex-wrap:wrap}
+.chips span{background:var(--panel-2);border:1px solid #37373c;border-radius:999px;padding:6px 9px;font-size:12px;color:#ddd}
+.toggle-row{display:flex;align-items:center;gap:10px;color:#ddd;font-size:14px}
+.toggle-row input{accent-color:var(--accent)}
+.voice-card{margin-top:auto}
+.voice-card strong{display:block;margin-bottom:8px}
+.voice-card audio{width:100%;height:35px}
+.voice-card small{display:block;color:var(--muted);margin-top:8px;line-height:1.4}
+.chat-area{display:flex;flex-direction:column;min-width:0}
+header{height:74px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:rgba(10,10,11,.92);backdrop-filter:blur(10px)}
+.header-profile{display:flex;align-items:center;gap:11px}
+.header-profile img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+.header-profile strong{display:block}
+.header-profile span{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.header-profile i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--accent);margin-right:5px}
+.icon-button,.round-button{border:1px solid var(--line);background:var(--panel);color:var(--text);border-radius:12px;cursor:pointer}
+.icon-button{width:42px;height:42px}
+.messages{flex:1;overflow:auto;padding:28px max(24px,calc((100% - 900px)/2));display:flex;flex-direction:column;gap:18px}
+.message{display:flex;gap:11px;align-items:flex-start}
+.message.user{justify-content:flex-end}
+.message img{width:35px;height:35px;border-radius:50%;object-fit:cover}
+.bubble{max-width:min(690px,82%);padding:13px 15px;border-radius:17px;line-height:1.5;white-space:pre-wrap}
+.assistant .bubble{background:var(--panel);border:1px solid var(--line);border-top-left-radius:5px}
+.user .bubble{background:var(--user);border-top-right-radius:5px}
+.timestamp{font-size:10px;color:#86868e;margin-top:5px}
+.composer-wrap{padding:14px max(20px,calc((100% - 900px)/2)) 18px;background:linear-gradient(transparent,var(--bg) 25%)}
+.composer{display:flex;align-items:flex-end;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:0 14px 35px rgba(0,0,0,.28)}
+textarea{flex:1;resize:none;max-height:150px;background:transparent;color:var(--text);border:0;outline:none;padding:10px 2px;line-height:1.4}
+textarea::placeholder{color:#81818a}
+.round-button,.send-button{width:43px;height:43px;flex:0 0 43px}
+.send-button{border:0;border-radius:14px;background:var(--accent);font-weight:900;cursor:pointer}
+.send-button:hover{background:#28d496}
+.round-button.listening{background:#7e2330;animation:pulse 1s infinite}
+.notice{text-align:center;color:#75757e;font-size:11px;margin:8px 0 0}
+@keyframes pulse{50%{transform:scale(1.08)}}
+.empty{margin:auto;text-align:center;max-width:520px}
+.empty img{width:100px;height:100px;border-radius:30px;object-fit:cover;border:3px solid var(--accent)}
+.empty h2{font-size:30px;margin:16px 0 8px}
+.empty p{color:var(--muted);line-height:1.55}
+@media(max-width:760px){
+  .app-shell{grid-template-columns:1fr}
+  .sidebar{display:none}
+  header{height:66px;padding:0 15px}
+  .messages{padding:20px 14px}
+  .composer-wrap{padding:10px 10px 12px}
+  .bubble{max-width:88%}
+}

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>My Josh</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand-row">
+        <img src="assets/josh-avatar.jpg" alt="Josh" class="brand-avatar" />
+        <div>
+          <h1>My Josh</h1>
+          <p>Your funny, loving, honest AI companion</p>
+        </div>
+      </div>
+
+      <button id="newChatBtn" class="new-chat">＋ New chat</button>
+
+      <div class="personality-card">
+        <h3>Josh's personality</h3>
+        <div class="chips">
+          <span>Funny</span><span>Loving</span><span>Protective</span>
+          <span>Honest</span><span>Sarcastic</span><span>Motivational</span>
+        </div>
+      </div>
+
+      <label class="toggle-row">
+        <input id="autoSpeak" type="checkbox" checked />
+        <span>Speak replies aloud</span>
+      </label>
+
+      <div class="voice-card">
+        <strong>Voice sample</strong>
+        <audio controls preload="metadata" src="assets/josh-voice-sample.m4a"></audio>
+        <small>Custom-voice replies require the optional voice server described in README.md.</small>
+      </div>
+    </aside>
+
+    <main class="chat-area">
+      <header>
+        <div class="header-profile">
+          <img src="assets/josh-avatar.jpg" alt="" />
+          <div>
+            <strong>My Josh</strong>
+            <span><i></i> Ready to chat</span>
+          </div>
+        </div>
+        <button id="clearBtn" class="icon-button" title="Clear conversation">🗑️</button>
+      </header>
+
+      <section id="messages" class="messages" aria-live="polite"></section>
+
+      <div class="composer-wrap">
+        <div class="composer">
+          <button id="micBtn" class="round-button" title="Talk to Josh">🎤</button>
+          <textarea id="messageInput" rows="1" placeholder="Message My Josh…"></textarea>
+          <button id="sendBtn" class="send-button">➤</button>
+        </div>
+        <p class="notice">AI-generated conversation and voice. Use Josh's voice only with his permission.</p>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
